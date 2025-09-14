@@ -35,7 +35,7 @@ It was developed specifically for **iCloud Mail**, but should work with any IMAP
 
 ### 1. Clone & Prepare
 ```bash
-git clone https://github.com/YOURUSER/imap-screener.git
+git clone https://github.com/Jondalar/imapfilter-icloud-hey-screener.git
 cd imap-screener
 ```
 
@@ -70,7 +70,7 @@ services:
 
 Set your actual iCloud email in `config.lua`:
 ```lua
-username = 'alex.damhuis@icloud.com'
+username = 'some.user@icloud.com'
 ```
 
 ### 3. Run
@@ -114,7 +114,7 @@ All lists are permanent (plain text files in `./state`).
 
 - Change scan interval in `imapfilter/run.sh`:
   ```sh
-  SLEEP=600   # seconds
+  SLEEP=60   # seconds
   ```
 - Add more keyword heuristics (e.g. for receipts) in `config.lua`.  
 - Edit list files manually in `./state/*.txt`.
