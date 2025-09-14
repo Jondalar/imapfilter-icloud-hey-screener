@@ -1,0 +1,14 @@
+services:
+  imapfilter:
+    build: .
+    container_name: imapfilter
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/Berlin
+      - IMAP_PW=SOMEPASSWORD
+     # - INTERVAL=5              # optional: 60, 300, 1800 ...
+    volumes:
+      - ./imapfilter:/config
+      - ./state:/state
+    entrypoint: ["/bin/sh", "/config/run.sh"]
+    
