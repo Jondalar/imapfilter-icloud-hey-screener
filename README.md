@@ -12,7 +12,7 @@ It was developed specifically for **iCloud Mail**, but should work with any IMAP
 - **Whitelist / Approve**:  
   When you move a mail from `Screened/` → `INBOX`, the sender is added to a permanent `whitelist.txt`. Future mails from them bypass `Screened` and land directly in INBOX.  
 - **Blocklist**:  
-  Move a mail to `Blackhole/` → sender goes to `blocklist.txt`. They’ll be filtered forever.  
+  Move a mail to `Junk` (Standard Spam folder for iCloud) → sender goes to `blocklist.txt`. They’ll be filtered forever.  
 - **Receipts / Newsletters**:  
   Training folders. Move mails there once → sender is remembered. Future mails go there automatically.  
 - **Persistent state**:  
@@ -95,14 +95,14 @@ Fetched the header of .../Screened[1]
 - **New mail** → iCloud server rule puts it in `Screened/`.  
 - **imapfilter loop (every 60s or 600s)** sorts:
   - Whitelist → INBOX
-  - Blocklist → Blackhole
+  - Blocklist → Junk
   - Receipts → Receipts
   - Newsletters → Newsletters
   - Others stay in `Screened/`
 
 - **Training / approving**:
   - Move mail → INBOX (approve) → sender whitelisted.  
-  - Move mail → Blackhole → sender blocked.  
+  - Move mail → Junk → sender blocked.  
   - Move mail → Receipts → sender added to receipt list.  
   - Move mail → Newsletters → sender added to newsletter list.  
 
